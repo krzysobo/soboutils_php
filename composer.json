@@ -1,0 +1,27 @@
+{
+    "name": "krzysobo/soboutils_php",
+    "description": "A bunch of useful classes and functions for PHP-based projects.",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0",
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Soboutils\\": "src/soboutils"
+        }
+    },
+    "authors": [
+        {
+            "name": "Krzysztof Sobolewski",
+            "email": "krzysztof.sobolewski@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/krzysobo/soboutils_php"
+        }
+    ]
+}
