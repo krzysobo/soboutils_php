@@ -1,7 +1,7 @@
 <?php
 namespace Soboutils;
 
-require_once "SoboSingleton.php";
+require_once "SoboSingletonTrait.php";
 require_once "Exceptions.php";
 
 
@@ -10,8 +10,19 @@ interface ISoboTemplate
     public function render($tpl_path, $params);
 }
 
-class SoboTemplate extends SoboSingleton implements ISoboTemplate
+
+class SoboTemplate implements ISoboTemplate
 {
+
+    use SoboSingletonTrait;
+
+    /**
+     * Summary of render
+     * @param mixed $tpl_path
+     * @param mixed $params
+     * @throws \Soboutils\FileNotFoundException
+     * @return bool|string
+     */
     public function render($tpl_path, $params)
     {
         if (! file_exists($tpl_path)) {
