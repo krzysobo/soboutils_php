@@ -1,9 +1,16 @@
 <?php
 namespace Soboutils;
 
-class FileNotFoundException extends \Exception
+
+class PropertyNotFoundException extends \Exception
 {
 
+}
+
+
+class FileNotFoundException extends \Exception
+{
+    
 }
 
 class SoboSingletonException extends \Exception
