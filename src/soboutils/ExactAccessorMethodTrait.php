@@ -16,6 +16,7 @@ require_once "Exceptions.php";
  */
 trait ExactAccessorMethodTrait
 {
+  
 
     public function __call($funcname, $args)
     {

@@ -38,4 +38,15 @@ class SoboTemplate implements ISoboTemplate
         return $res;
     }
 
+    /**
+     * Summary of renderPathArray
+     * @param mixed $tpl_path_array
+     * @param mixed $params
+     * @return bool|string
+     */
+    public function renderPathArray($tpl_path_array, $params) {
+        $tpl_path = Path::joinPaths($tpl_path_array);
+        return $this->render($tpl_path, $params);
+    }
+
 }

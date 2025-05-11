@@ -16,11 +16,22 @@ class Path {
         if (!isset($paths) || empty($paths)) { 
             throw new ValueError("PATH IS EMPTY"); 
         }
+
+        $paths_tmp = [];
+        foreach($paths as $i => $path_tmp) {
+            if (!is_array($path_tmp)) {
+                $paths_tmp []= $path_tmp;
+            } else {
+                foreach ($path_tmp as $path_tmp_element) {
+                    $paths_tmp []= $path_tmp_element;
+                }
+            }
+        }
     
         $cur_dir_separator = DIRECTORY_SEPARATOR;
         $another_dir_separator = ($cur_dir_separator == '/')? '\\': '/';
     
-        foreach($paths as $i => $path) {
+        foreach($paths_tmp as $i => $path) {
             // echo "\n<br />PATH: $path";
             if (isset($path) && ($path != "")) {
                 if (strstr($path, $another_dir_separator)) {
